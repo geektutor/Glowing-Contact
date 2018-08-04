@@ -1,0 +1,34 @@
+OCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Submit Data</title>
+</head>
+<body>
+
+    <form id="input" action="text.php" method="post">
+        Comment: <textarea name="data" cols="100" rows="10">
+            Name: 
+            Address: 
+            Email: 
+            Phone: 
+            ---------------------------------------------
+        </textarea>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+   <!--  <table>
+        <?php foreach ($comments as $i => $comment) { ?>
+        <tr>
+            <td>
+                Comment(<?php echo ($i + 1)?>):
+            </td>
+            <td>
+                <?php echo $comment;?>
+            </tr>
+        </td>
+        <?php }?> 
+    </table> -->
+    <a href="test.txt">View Core File</a>
+</body>
+</html>
+
