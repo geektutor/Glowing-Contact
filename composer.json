@@ -1,5 +1,11 @@
 {
     "require": {
         "phpmailer/phpmailer": "^6.0"
-    }
+    },
+ "autoload": {
+    "classmap": [
+	  "vendor/phpmailer/phpmailer",
+      "vendor/pekky/mail"
+	  ]
+  }
 }
