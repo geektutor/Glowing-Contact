@@ -9,7 +9,7 @@ if(empty($_POST['name'])      ||
    echo "No arguments Provided!";
    return false;
    }
-   
+   include "../vendor/autoload.php";
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
@@ -31,7 +31,16 @@ $mailer->password = "password";
 $mailer->subject = $email_subject;
 $mailer->build();
 $mail->add_header($headers);
-$mailer->set_body($email_body,$email_body);//second arg is for non html mails		
+$mailer->set_body($email_body,$email_body);//second arg is for non html mails
+
 $mailer->send_to($to);
+//store contact in array for the procezzing
+//pattern "name,email,subject,body"
+$del = ',';
+$detail = $name.$del.$email.$del.$email_subject.$del.$email_body;
+	$file = fopen("contact_data.csv","a");
+	fputcsv($file,explode($del,$detail));
+fclose($file);
+
 return true;         
 ?>
